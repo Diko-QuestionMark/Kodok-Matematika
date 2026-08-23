@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Generaotr"
-run/main_scene="uid://dd473h1k2k4m4"
+run/main_scene="uid://cjflcuugi0bl8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
