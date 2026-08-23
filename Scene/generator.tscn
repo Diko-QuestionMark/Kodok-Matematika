@@ -77,7 +77,7 @@ value = 6.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=978945655]
-wait_time = 6.0
+wait_time = 2.0
 autostart = true
 
 [node name="LayarPerbaikan" type="CanvasLayer" parent="." unique_id=61133870]

@@ -2,10 +2,28 @@ extends Node2D
 
 @onready var timer = $Timer
 @onready var progress_bar = $ProgressBar
+@onready var data_jumlah_gene = $"..".jumlah_gene_aktif
+
+func _ready() -> void:
+	progress_bar.max_value = 600
+
 
 func _process(_delta: float) -> void:
-	if Global.sudah_menang == false:
-		progress_bar.value = (timer.wait_time - timer.time_left) / timer.wait_time * 100
+	pass
+
 
 func _on_timer_timeout() -> void:
-	Global.sudah_menang = true
+	print(data_jumlah_gene)
+	if Global.sudah_menang == false:
+		if data_jumlah_gene == 4:
+			progress_bar.value += 5
+		if data_jumlah_gene == 3:
+			progress_bar.value += 3
+		if data_jumlah_gene == 2:
+			progress_bar.value += 1
+		if data_jumlah_gene == 1:
+			progress_bar.value += 0
+		if data_jumlah_gene == 0:
+			pass
+	if progress_bar.value >= 1000:
+		Global.sudah_menang = true

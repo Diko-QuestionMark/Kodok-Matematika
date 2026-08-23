@@ -5,6 +5,7 @@ extends Node2D
 @onready var sprite = $AnimatedSprite2D
 @onready var layar_perbaikan = $LayarPerbaikan
 
+
 var health = 10
 var on_area = false
 var gene_on = true
@@ -15,7 +16,7 @@ func _ready() -> void:
 	sprite.play("on")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if on_area == true && Input.is_action_just_pressed("interact"):
 		Global.panel_aktif = true
 		layar_perbaikan.show()
@@ -31,13 +32,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		label.hide()
-		on_area = true
+		on_area = false
 		pass
 
 
 func _on_timer_timeout() -> void:
 	if gene_on == true:
-		health -= randi_range(0,2)
+		health -= randi_range(0,3)
 		if health <= 0:
 			health = 0
 			gene_on = false
