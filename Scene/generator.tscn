@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://0jkapyxp3gq1"]
+
+[ext_resource type="Script" uid="uid://bl55wjfr32koq" path="res://Script/generator.gd" id="1_07y2u"]
+[ext_resource type="Texture2D" uid="uid://b55al4h73ibo2" path="res://Free/generator1-sheet.png" id="2_wm3v0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07y2u"]
+atlas = ExtResource("2_wm3v0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm3v0"]
+atlas = ExtResource("2_wm3v0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk02g"]
+atlas = ExtResource("2_wm3v0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sisn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07y2u")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm3v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk02g")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sisn"]
+radius = 32.0
+
+[node name="Generator1" type="Node2D" unique_id=986039888]
+script = ExtResource("1_07y2u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=170053406]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5sisn")
+animation = &"off"
+frame_progress = 0.6000071
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1630177342]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1546902556]
+visible = false
+shape = SubResource("CircleShape2D_5sisn")
+
+[node name="Fix" type="Label" parent="." unique_id=1782085799]
+visible = false
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 63.0
+offset_bottom = -25.0
+text = "Perbaiki [E]"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2019979593]
+modulate = Color(0.07450981, 0.99215686, 0, 1)
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = -16.0
+theme_override_font_sizes/font_size = 2
+max_value = 10.0
+step = 1.0
+value = 6.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="." unique_id=978945655]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dept42lhoyudh"]
+
+[ext_resource type="Script" uid="uid://onl3gcddff6e" path="res://Script/laptop.gd" id="1_adki4"]
+[ext_resource type="Texture2D" uid="uid://doo0lk1pvprpd" path="res://laptop.jpg" id="2_f2i8v"]
+
+[node name="Laptop" type="Node2D" unique_id=854692735]
+script = ExtResource("1_adki4")
+
+[node name="Laptop" type="Sprite2D" parent="." unique_id=1952831615]
+scale = Vector2(0.06699346, 0.066993475)
+texture = ExtResource("2_f2i8v")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=842694610]
+modulate = Color(0.07294176, 0.99274486, 0, 1)
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 48.0
+offset_bottom = -14.0
+theme_override_font_sizes/font_size = 10
+
+[node name="Timer" type="Timer" parent="." unique_id=1720785216]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="." unique_id=1005186646]
+offset_left = -56.0
+offset_top = -48.0
+offset_right = 56.0
+offset_bottom = -36.0
+theme_override_font_sizes/font_size = 8
+text = "Kecepatan: Tinggi"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
