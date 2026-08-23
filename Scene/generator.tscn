@@ -40,14 +40,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_5sisn"]
 radius = 32.0
 
-[node name="Generator1" type="Node2D" unique_id=986039888]
+[node name="Generator" type="Node2D" unique_id=986039888]
 script = ExtResource("1_07y2u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=170053406]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5sisn")
 animation = &"off"
-frame_progress = 0.017385898
+frame_progress = 0.42129415
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1630177342]
 
@@ -77,18 +77,19 @@ value = 6.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=978945655]
-wait_time = 2.0
+wait_time = 6.0
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=61133870]
+[node name="LayarPerbaikan" type="CanvasLayer" parent="." unique_id=61133870]
+visible = false
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=401372040]
+[node name="Panel" type="Panel" parent="LayarPerbaikan" unique_id=401372040]
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 1088.0
 offset_bottom = 576.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=320889482]
+[node name="Label" type="Label" parent="LayarPerbaikan/Panel" unique_id=320889482]
 layout_mode = 0
 offset_left = 224.0
 offset_top = 128.0
@@ -98,7 +99,7 @@ theme_override_font_sizes/font_size = 64
 text = "1 + 1 = ?"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=877005548]
+[node name="HBoxContainer" type="HBoxContainer" parent="LayarPerbaikan/Panel" unique_id=877005548]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,14 +107,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -448.0
-offset_top = 56.0
+offset_top = 112.0
 offset_right = 452.0
-offset_bottom = 131.0
+offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 60
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1331085964]
+[node name="Button1" type="Button" parent="LayarPerbaikan/Panel/HBoxContainer" unique_id=1331085964]
 custom_minimum_size = Vector2(180, 0)
 custom_maximum_size = Vector2(180, -1)
 layout_mode = 2
@@ -121,7 +122,7 @@ offset_transform_enabled = true
 theme_override_font_sizes/font_size = 48
 text = "A"
 
-[node name="Button2" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=233165926]
+[node name="Button2" type="Button" parent="LayarPerbaikan/Panel/HBoxContainer" unique_id=233165926]
 custom_minimum_size = Vector2(180, 0)
 custom_maximum_size = Vector2(180, -1)
 layout_mode = 2
@@ -129,7 +130,7 @@ offset_transform_enabled = true
 theme_override_font_sizes/font_size = 48
 text = "B"
 
-[node name="Button3" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=349016319]
+[node name="Button3" type="Button" parent="LayarPerbaikan/Panel/HBoxContainer" unique_id=349016319]
 custom_minimum_size = Vector2(180, 0)
 custom_maximum_size = Vector2(180, -1)
 layout_mode = 2
@@ -137,7 +138,7 @@ offset_transform_enabled = true
 theme_override_font_sizes/font_size = 48
 text = "C"
 
-[node name="Button4" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1330014403]
+[node name="Button4" type="Button" parent="LayarPerbaikan/Panel/HBoxContainer" unique_id=1330014403]
 custom_minimum_size = Vector2(180, 0)
 custom_maximum_size = Vector2(180, -1)
 layout_mode = 2
@@ -145,7 +146,7 @@ offset_transform_enabled = true
 theme_override_font_sizes/font_size = 48
 text = "D"
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel" unique_id=2001493114]
+[node name="Exit" type="Button" parent="LayarPerbaikan/Panel" unique_id=2001493114]
 layout_mode = 0
 offset_left = 952.0
 offset_top = 24.0
@@ -157,3 +158,8 @@ text = "x"
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="LayarPerbaikan/Panel/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="LayarPerbaikan/Panel/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="LayarPerbaikan/Panel/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="LayarPerbaikan/Panel/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="LayarPerbaikan/Panel/Exit" to="." method="_on_exit_pressed"]
