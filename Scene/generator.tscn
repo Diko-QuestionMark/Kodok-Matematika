@@ -163,24 +163,23 @@ value = 6.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=978945655]
-wait_time = 6.0
+wait_time = 4.0
 autostart = true
 
 [node name="BenarSalah" type="CanvasLayer" parent="." unique_id=367129086]
 visible = false
 
 [node name="BenarSalah" type="Label" parent="BenarSalah" unique_id=921012320]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -345.5
-offset_top = -220.0
-offset_right = 345.5
-offset_bottom = -44.99997
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 230.5
+offset_top = 104.0
+offset_right = 230.5
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 128
 text = "BENAR"
 horizontal_alignment = 1
@@ -189,10 +188,17 @@ horizontal_alignment = 1
 visible = false
 
 [node name="Panel" type="Panel" parent="LayarPerbaikan" unique_id=401372040]
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 1088.0
-offset_bottom = 576.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -256.0
+offset_right = 512.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="LayarPerbaikan/Panel" unique_id=320889482]
 layout_mode = 0

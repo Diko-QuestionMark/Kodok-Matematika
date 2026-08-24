@@ -12,10 +12,11 @@ var a
 var b
 var c
 var d
+var progres1
 
 
 func _process(delta: float) -> void:
-	time_label.text = str(int(game_timer.wait_time - ((game_timer.wait_time - game_timer.time_left) / game_timer.wait_time) * 100))
+	time_label.text = str(int(game_timer.wait_time - ((game_timer.wait_time - game_timer.time_left) / game_timer.wait_time) * 100), " ")
 	if Global.sudah_menang:
 		Global.sudah_menang = false
 		await get_tree().create_timer(5).timeout
@@ -42,5 +43,11 @@ func _process(delta: float) -> void:
 		d = 0
 	jumlah_gene_aktif = a + b + c + d
 
+
 func _on_game_timer_timeout() -> void:
-	pass # Replace with function body.
+	Global.sudah_kalah = true
+	Global.sudah_kalah = false
+
+
+func _on_laptop_1_progress_200() -> void:
+	progres1 = true

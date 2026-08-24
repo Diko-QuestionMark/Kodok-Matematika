@@ -443,7 +443,7 @@ script = ExtResource("1_k52wo")
 zoom = Vector2(3, 3)
 
 [node name="Player" type="CharacterBody2D" parent="Camera2D" unique_id=1737007550]
-position = Vector2(-82, 25)
+position = Vector2(-82, 17)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D/Player" unique_id=375021931]
 sprite_frames = SubResource("SpriteFrames_5sisn")
@@ -474,12 +474,12 @@ stretch_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Camera2D" unique_id=1928648284]
-position = Vector2(6, 169)
+position = Vector2(6, 161)
 tile_map_data = PackedByteArray("AAD+//n/AAAIAAIAAAD+//j/AAAIAAAAAAD9//n/AAAHAAIAAAD9//j/AAAHAAAAAAD8//n/AAAJAAAAAAD8//j/AAAHAAAAAAD7//n/AAAHAAEAAAD7//j/AAAHAAAAAAD6//n/AAAHAAEAAAD6//j/AAAHAAAAAAD5//n/AAAHAAEAAAD5//j/AAAHAAAAAAD4//n/AAAHAAEAAAD4//j/AAAHAAAAAAD3//n/AAAHAAEAAAD3//j/AAAHAAAAAAD2//n/AAAKAAAAAAD2//j/AAAHAAAAAAD1//n/AAAHAAIAAAD1//j/AAAHAAAAAAD0//n/AAAGAAIAAAD0//j/AAAGAAAAAAD8//v/AAAIAAIAAAD8//r/AAAIAAEAAAD7//v/AAAHAAIAAAD7//r/AAAHAAEAAAD6//v/AAAHAAIAAAD6//r/AAAHAAEAAAD5//v/AAAHAAIAAAD5//r/AAAHAAEAAAD4//v/AAAHAAIAAAD4//r/AAAHAAEAAAD3//v/AAAHAAIAAAD3//r/AAAHAAEAAAD2//v/AAAGAAIAAAD2//r/AAAGAAEAAAA=")
 tile_set = SubResource("TileSet_5sisn")
 
 [node name="Laptop1" type="Node2D" parent="Camera2D" unique_id=854692735]
-position = Vector2(-58, 17)
+position = Vector2(-58, 9)
 
 [node name="Laptop" type="Sprite2D" parent="Camera2D/Laptop1" unique_id=1952831615]
 position = Vector2(-80, 0)
@@ -488,17 +488,18 @@ texture = ExtResource("7_k52wo")
 
 [node name="Mathfrog" type="Label" parent="Camera2D" unique_id=1226056860]
 offset_left = -232.0
-offset_top = -88.0
+offset_top = -96.0
 offset_right = 232.0
-offset_bottom = -43.0
+offset_bottom = -51.0
 theme_override_font_sizes/font_size = 32
 text = "KODOK MATEMATIKA"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=870474747]
 offset_left = 40.0
+offset_top = -8.0
 offset_right = 154.0
-offset_bottom = 101.0
+offset_bottom = 93.0
 
 [node name="Mulai" type="Button" parent="VBoxContainer" unique_id=671531400]
 layout_mode = 2
@@ -511,6 +512,15 @@ text = "Cara Bermain"
 [node name="Keluar" type="Button" parent="VBoxContainer" unique_id=1428734522]
 layout_mode = 2
 text = "Keluar"
+
+[node name="Label" type="Label" parent="." unique_id=1318728933]
+offset_left = -160.0
+offset_top = -48.0
+offset_right = -88.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 8
+text = "Berhasil: 10
+Gagal: 10"
 
 [connection signal="pressed" from="VBoxContainer/Mulai" to="." method="_on_mulai_pressed"]
 [connection signal="pressed" from="VBoxContainer/Cara Bermain" to="." method="_on_cara_bermain_pressed"]

@@ -10,6 +10,8 @@ extends Node2D
 @onready var button3 = $LayarPerbaikan/Panel/HBoxContainer/Button3
 @onready var button4 = $LayarPerbaikan/Panel/HBoxContainer/Button4
 @onready var label_koreksi = $BenarSalah/BenarSalah
+@onready var laptop = $"../Laptop1"
+@onready var timer = $Timer
 
 var health = 10
 var on_area = false
@@ -25,6 +27,11 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if laptop.progress200:
+		timer.wait_time = 3
+		print("progress200")
+	
+	
 	if on_area && health != 10:
 		label.show()
 	else:
@@ -60,7 +67,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	if gene_on == true:
-		health -= randi_range(0,3)
+		health -= randi_range(0,2)
 		if health <= 0:
 			health = 0
 			gene_on = false
@@ -109,14 +116,14 @@ func cek_jawaban(button: int) -> void:
 			health = 10
 		print("benar")
 		label_koreksi.text = "BENAR"
-		label_koreksi.modulate = Color(0.008, 1.0, 0.0, 1.0)
 		$AnimationPlayer.play("ShowBenarSalah")
+		gene_on = true
+		sprite.play("on")
 	else:
 		health -= 3
 		if health < 0:
 			health = 0
 		print("salah")
 		label_koreksi.text = "SALAH"
-		label_koreksi.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		$AnimationPlayer.play("ShowBenarSalah")
 	health_bar.value = health

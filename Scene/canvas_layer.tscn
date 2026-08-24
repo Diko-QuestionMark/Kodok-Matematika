@@ -7,8 +7,11 @@ script = ExtResource("1_ml06h")
 
 [node name="GameMenang" type="ColorRect" parent="." unique_id=276667799]
 visible = false
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.48235294)
 
 [node name="GameMenang1" type="Label" parent="GameMenang" unique_id=843987054]
@@ -48,8 +51,11 @@ horizontal_alignment = 1
 
 [node name="GameKalah" type="ColorRect" parent="." unique_id=655879252]
 visible = false
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.48235294)
 
 [node name="GameKalah1" type="Label" parent="GameKalah" unique_id=2096204519]
@@ -88,10 +94,11 @@ text = "GAGAL"
 horizontal_alignment = 1
 
 [node name="Time" type="Label" parent="." unique_id=740049999]
-offset_left = 1072.0
-offset_top = 8.0
-offset_right = 1144.0
-offset_bottom = 53.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "120"
-horizontal_alignment = 1
+text = "120 "
+horizontal_alignment = 2
