@@ -8,5 +8,5 @@ Apakah sang katak bisa mendownload dan mendapat gajinya untuk keluarganya? atau 
 akan kelaparan!
 
 
-<h1>Alasan game ini dibuat</h1>
+<h1>Alasan Game ini Dibuat</h1>
 Untuk melatih skill game dev saya, dan menciptakan sebuah hasil yang bisa dinikmati banyak orang.
