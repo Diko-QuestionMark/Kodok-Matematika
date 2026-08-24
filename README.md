@@ -1,5 +1,4 @@
 <h1>Cerita</h1>
-
 Game mengenai seorang katak yang mencari uang dengan cara bekerja di bawah pemerintahan.
 Disini katak mendownload data rahasia untuk kepentingan negara.
 Namun karena listrik disini cepat habis dan juga kouta yg dimiliki akan hangus dalam waktu dekat,
