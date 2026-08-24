@@ -4,11 +4,18 @@ extends Node2D
 @onready var health_bar = $ProgressBar
 @onready var sprite = $AnimatedSprite2D
 @onready var layar_perbaikan = $LayarPerbaikan
-
+@onready var label_soal = $LayarPerbaikan/Panel/Label
+@onready var button1 = $LayarPerbaikan/Panel/HBoxContainer/Button1
+@onready var button2 = $LayarPerbaikan/Panel/HBoxContainer/Button2
+@onready var button3 = $LayarPerbaikan/Panel/HBoxContainer/Button3
+@onready var button4 = $LayarPerbaikan/Panel/HBoxContainer/Button4
 
 var health = 10
 var on_area = false
 var gene_on = true
+var a
+var opsi = []
+var jawaban_benar
 
 
 func _ready() -> void:
@@ -17,21 +24,35 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if on_area == true && Input.is_action_just_pressed("interact"):
+	if on_area && health != 10:
+		label.show()
+	else:
+		label.hide()
+	
+	if on_area == true && Input.is_action_just_pressed("interact") && health != 10 && !layar_perbaikan.visible:
+		a = GenerateSoal.generate_soal()
+		opsi = a[2]
+		jawaban_benar = opsi[0]
+		opsi.shuffle()
+		print(opsi)
+		label_soal.text = str(a[0], " + ", a[1], " = ?")
+		button1.text = str(opsi[0])
+		button2.text = str(opsi[1])
+		button3.text = str(opsi[2])
+		button4.text = str(opsi[3])
+		
 		Global.panel_aktif = true
 		layar_perbaikan.show()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		label.show()
 		on_area = true
 		pass
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
-		label.hide()
 		on_area = false
 		pass
 
@@ -51,18 +72,22 @@ func _on_exit_pressed() -> void:
 
 
 func _on_button_1_pressed() -> void:
+	cek_jawaban(opsi[0])
 	tutup_layar_perbaikan()
 
 
 func _on_button_2_pressed() -> void:
+	cek_jawaban(opsi[1])
 	tutup_layar_perbaikan()
 
 
 func _on_button_3_pressed() -> void:
+	cek_jawaban(opsi[2])
 	tutup_layar_perbaikan()
 
 
 func _on_button_4_pressed() -> void:
+	cek_jawaban(opsi[3])
 	tutup_layar_perbaikan()
 
 
@@ -74,3 +99,17 @@ func tutup_layar_perbaikan() -> void:
 func buka_layar_perbaikan() -> void:
 	Global.panel_aktif = true
 	layar_perbaikan.show()
+
+
+func cek_jawaban(button: int) -> void:
+	if button == jawaban_benar:
+		health += 5
+		if health > 10:
+			health = 10
+		print("benar")
+	else:
+		health -= 3
+		if health < 0:
+			health = 0
+		print("salah")
+	health_bar.value = health

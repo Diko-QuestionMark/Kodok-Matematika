@@ -16,7 +16,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print(data_jumlah_gene)
 	if Global.sudah_menang == false:
 		if data_jumlah_gene == 4:
 			progress_bar.value += 5
@@ -29,5 +28,5 @@ func _on_timer_timeout() -> void:
 		if data_jumlah_gene == 0:
 			Global.sudah_kalah = true
 	
-	if progress_bar.value >= 1000:
+	if progress_bar.value >= progress_bar.max_value:
 		Global.sudah_menang = true
