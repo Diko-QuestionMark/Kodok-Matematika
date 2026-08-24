@@ -6,3 +6,7 @@ Namun karena listrik disini cepat habis dan juga kouta yg dimiliki akan hangus d
 maka si katak harus menjaga generator listrik hidup sebanyak mungkin agar kecepatan downloadnya cepat.
 Apakah sang katak bisa mendownload dan mendapat gajinya untuk keluarganya? atau anaknya dan istrinya
 akan kelaparan!
+
+
+<h1>Alasan game ini dibuat</h1>
+Untuk melatih skill game dev saya, dan menciptakan sebuah hasil yang bisa dinikmati banyak orang.
