@@ -524,9 +524,9 @@ Gagal: 10"
 
 [node name="Label2" type="Label" parent="." unique_id=83393025]
 offset_left = -184.0
-offset_top = 88.0
+offset_top = 96.0
 offset_right = -108.0
-offset_bottom = 100.0
+offset_bottom = 108.0
 theme_override_font_sizes/font_size = 8
 text = "Dibuat oleh Fedriko"
 
