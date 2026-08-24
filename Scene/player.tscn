@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://fuv5mfdyelby" path="res://Free/Main Characters/Ninja Frog/Idle (32x32).png" id="3_p6qlh"]
 [ext_resource type="Texture2D" uid="uid://31bvsj64ygoq" path="res://Free/Main Characters/Ninja Frog/Jump (32x32).png" id="4_2sw5t"]
 [ext_resource type="Texture2D" uid="uid://bniphgqxyuy6p" path="res://Free/Main Characters/Ninja Frog/Run (32x32).png" id="5_ij4jb"]
-[ext_resource type="Texture2D" uid="uid://kldcgyvpx52g" path="res://Scene/direction_left.png" id="6_p6qlh"]
-[ext_resource type="Texture2D" uid="uid://din2hgrw3jxjq" path="res://Scene/direction_right.png" id="7_2sw5t"]
-[ext_resource type="Texture2D" uid="uid://6bs2xc7qfn3o" path="res://Scene/dpad_element_south.png" id="8_ij4jb"]
-[ext_resource type="Texture2D" uid="uid://lbq18o6111cf" path="res://Scene/button_circle.png" id="9_c68nv"]
+[ext_resource type="Texture2D" uid="uid://kldcgyvpx52g" path="res://Free/direction_left.png" id="6_p6qlh"]
+[ext_resource type="Texture2D" uid="uid://din2hgrw3jxjq" path="res://Free/direction_right.png" id="7_2sw5t"]
+[ext_resource type="Texture2D" uid="uid://6bs2xc7qfn3o" path="res://Free/dpad_element_south.png" id="8_ij4jb"]
+[ext_resource type="Texture2D" uid="uid://lbq18o6111cf" path="res://Free/button_circle.png" id="9_c68nv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtqh7"]
 atlas = ExtResource("2_r6jsd")
@@ -243,25 +243,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Kiri" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=836221030]
-position = Vector2(-40.5, 488)
+position = Vector2(-40.5, 504)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("6_p6qlh")
 action = "left"
+visibility_mode = 1
 
 [node name="Kanan" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=433849891]
-position = Vector2(127.5, 488)
+position = Vector2(127.5, 504)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("7_2sw5t")
 action = "right"
+visibility_mode = 1
 
 [node name="Lompat" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=321120201]
-position = Vector2(927.5, 488)
+position = Vector2(927.5, 504)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("8_ij4jb")
 action = "jump"
+visibility_mode = 1
 
 [node name="Perbaiki" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=996941487]
-position = Vector2(1095.5, 488)
+position = Vector2(1095.5, 504)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("9_c68nv")
 action = "interact"
+visibility_mode = 1

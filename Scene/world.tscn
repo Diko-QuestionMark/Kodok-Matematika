@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0jkapyxp3gq1" path="res://Scene/generator.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://dept42lhoyudh" path="res://Scene/laptop.tscn" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://burrt3a4mt6hu" path="res://Scene/canvas_layer.tscn" id="7_pkg7o"]
+[ext_resource type="Texture2D" uid="uid://br3i7grycyouu" path="res://Free/VeniaVeronica.jpeg" id="8_ddf65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("1_fj7yv")
@@ -284,5 +285,10 @@ wait_time = 120.0
 autostart = true
 
 [node name="CanvasLayer" parent="." unique_id=818496450 instance=ExtResource("7_pkg7o")]
+
+[node name="VeniaVeronica" type="Sprite2D" parent="." unique_id=2019787580]
+position = Vector2(384, -336.00003)
+scale = Vector2(0.066666685, 0.066666685)
+texture = ExtResource("8_ddf65")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

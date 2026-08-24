@@ -522,6 +522,14 @@ theme_override_font_sizes/font_size = 8
 text = "Berhasil: 10
 Gagal: 10"
 
+[node name="Label2" type="Label" parent="." unique_id=83393025]
+offset_left = -184.0
+offset_top = 88.0
+offset_right = -108.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 8
+text = "Dibuat oleh Fedriko"
+
 [connection signal="pressed" from="VBoxContainer/Mulai" to="." method="_on_mulai_pressed"]
 [connection signal="pressed" from="VBoxContainer/Cara Bermain" to="." method="_on_cara_bermain_pressed"]
 [connection signal="pressed" from="VBoxContainer/Keluar" to="." method="_on_keluar_pressed"]
