@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cejqdv75a6txr" path="res://Free/Terrain/Terrain (16x16).png" id="4_k52wo"]
 [ext_resource type="Texture2D" uid="uid://dv36m4lbr3qgm" path="res://Free/Background/Blue.png" id="5_fyf5i"]
 [ext_resource type="Texture2D" uid="uid://bniphgqxyuy6p" path="res://Free/Main Characters/Ninja Frog/Run (32x32).png" id="5_iaqyx"]
-[ext_resource type="Texture2D" uid="uid://doo0lk1pvprpd" path="res://laptop.jpg" id="7_k52wo"]
+[ext_resource type="Texture2D" uid="uid://doo0lk1pvprpd" path="res://Free/laptop.jpg" id="7_k52wo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtqh7"]
 atlas = ExtResource("2_6hgn1")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhwku81fh3tln"
-path="res://.godot/imported/nailongspreadsheet-removebg-preview.png-1bd75d2fc9778259b08902334ee0e421.ctex"
+uid="uid://cxsut8l07d7cv"
+path="res://.godot/imported/nailongspreadsheet.jpg-c644923ff8663a3c2ca58d6d0d4ada92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nailongspreadsheet-removebg-preview.png"
-dest_files=["res://.godot/imported/nailongspreadsheet-removebg-preview.png-1bd75d2fc9778259b08902334ee0e421.ctex"]
+source_file="res://Free/nailongspreadsheet.jpg"
+dest_files=["res://.godot/imported/nailongspreadsheet.jpg-c644923ff8663a3c2ca58d6d0d4ada92.ctex"]
 
 [params]
 

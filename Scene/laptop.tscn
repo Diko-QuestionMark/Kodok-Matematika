@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dept42lhoyudh"]
 
 [ext_resource type="Script" uid="uid://onl3gcddff6e" path="res://Script/laptop.gd" id="1_adki4"]
-[ext_resource type="Texture2D" uid="uid://doo0lk1pvprpd" path="res://laptop.jpg" id="2_f2i8v"]
+[ext_resource type="Texture2D" uid="uid://doo0lk1pvprpd" path="res://Free/laptop.jpg" id="2_f2i8v"]
 
 [node name="Laptop" type="Node2D" unique_id=854692735]
 script = ExtResource("1_adki4")

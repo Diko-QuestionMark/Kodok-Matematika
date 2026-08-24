@@ -40,6 +40,92 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_5sisn"]
 radius = 32.0
 
+[sub_resource type="Animation" id="Animation_07y2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BenarSalah:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BenarSalah/BenarSalah:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(230.5, 104)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BenarSalah/BenarSalah:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wm3v0"]
+resource_name = "ShowBenarSalah"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BenarSalah:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BenarSalah/BenarSalah:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(230.5, 104), Vector2(232, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BenarSalah/BenarSalah:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.16862746)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yk02g"]
+_data = {
+&"RESET": SubResource("Animation_07y2u"),
+&"ShowBenarSalah": SubResource("Animation_wm3v0")
+}
+
 [node name="Generator" type="Node2D" unique_id=986039888]
 script = ExtResource("1_07y2u")
 
@@ -79,6 +165,25 @@ show_percentage = false
 [node name="Timer" type="Timer" parent="." unique_id=978945655]
 wait_time = 6.0
 autostart = true
+
+[node name="BenarSalah" type="CanvasLayer" parent="." unique_id=367129086]
+visible = false
+
+[node name="BenarSalah" type="Label" parent="BenarSalah" unique_id=921012320]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.5
+offset_top = -220.0
+offset_right = 345.5
+offset_bottom = -44.99997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "BENAR"
+horizontal_alignment = 1
 
 [node name="LayarPerbaikan" type="CanvasLayer" parent="." unique_id=61133870]
 visible = false
@@ -154,6 +259,9 @@ offset_right = 1000.0
 offset_bottom = 77.0
 theme_override_font_sizes/font_size = 32
 text = "x"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1993102800]
+libraries/ = SubResource("AnimationLibrary_yk02g")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

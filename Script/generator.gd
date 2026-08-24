@@ -9,6 +9,7 @@ extends Node2D
 @onready var button2 = $LayarPerbaikan/Panel/HBoxContainer/Button2
 @onready var button3 = $LayarPerbaikan/Panel/HBoxContainer/Button3
 @onready var button4 = $LayarPerbaikan/Panel/HBoxContainer/Button4
+@onready var label_koreksi = $BenarSalah/BenarSalah
 
 var health = 10
 var on_area = false
@@ -107,9 +108,15 @@ func cek_jawaban(button: int) -> void:
 		if health > 10:
 			health = 10
 		print("benar")
+		label_koreksi.text = "BENAR"
+		label_koreksi.modulate = Color(0.008, 1.0, 0.0, 1.0)
+		$AnimationPlayer.play("ShowBenarSalah")
 	else:
 		health -= 3
 		if health < 0:
 			health = 0
 		print("salah")
+		label_koreksi.text = "SALAH"
+		label_koreksi.modulate = Color(1.0, 0.0, 0.0, 1.0)
+		$AnimationPlayer.play("ShowBenarSalah")
 	health_bar.value = health
