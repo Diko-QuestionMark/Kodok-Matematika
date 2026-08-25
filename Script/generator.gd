@@ -12,6 +12,8 @@ extends Node2D
 @onready var label_koreksi = $BenarSalah/BenarSalah
 @onready var laptop = $"../Laptop1"
 @onready var timer = $Timer
+@onready var correct_sound = $Correct
+@onready var false_sound = $False
 
 var health = 10
 var on_area = false
@@ -27,9 +29,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if laptop.progress200:
+	if laptop.progress300:
 		timer.wait_time = 3
-		print("progress200")
+		print("progress300")
 	
 	
 	if on_area && health != 10:
@@ -111,19 +113,27 @@ func buka_layar_perbaikan() -> void:
 
 func cek_jawaban(button: int) -> void:
 	if button == jawaban_benar:
-		health += 5
+		health += 6
 		if health > 10:
 			health = 10
 		print("benar")
+		correct_sound.stop()
+		correct_sound.play()
 		label_koreksi.text = "BENAR"
+		$AnimationPlayer.stop()
 		$AnimationPlayer.play("ShowBenarSalah")
 		gene_on = true
 		sprite.play("on")
 	else:
 		health -= 3
 		if health < 0:
+			gene_on = false
+			sprite.play("off")
 			health = 0
 		print("salah")
+		false_sound.stop()
+		false_sound.play()
 		label_koreksi.text = "SALAH"
+		$AnimationPlayer.stop()
 		$AnimationPlayer.play("ShowBenarSalah")
 	health_bar.value = health

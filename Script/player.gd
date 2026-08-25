@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var jump_sound = $JumpSound
 
 const SPEED = 250.0
 const JUMP_VELOCITY = -400.0
@@ -14,6 +15,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move:
 		velocity.y = JUMP_VELOCITY
+		var pitch = randf_range(0.9, 1.1)
+		jump_sound.pitch_scale = pitch
+		jump_sound.play()
 	var direction := Input.get_axis("left", "right")
 	if direction and can_move:
 		$AnimatedSprite2D.play("run")

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://din2hgrw3jxjq" path="res://Free/direction_right.png" id="7_2sw5t"]
 [ext_resource type="Texture2D" uid="uid://6bs2xc7qfn3o" path="res://Free/dpad_element_south.png" id="8_ij4jb"]
 [ext_resource type="Texture2D" uid="uid://lbq18o6111cf" path="res://Free/button_circle.png" id="9_c68nv"]
+[ext_resource type="AudioStream" uid="uid://bbbvviylsrvck" path="res://Free/jump.wav" id="10_c68nv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtqh7"]
 atlas = ExtResource("2_r6jsd")
@@ -269,3 +270,7 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("9_c68nv")
 action = "interact"
 visibility_mode = 1
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=455765639]
+stream = ExtResource("10_c68nv")
+volume_db = -1.0

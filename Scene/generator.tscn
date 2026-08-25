@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bl55wjfr32koq" path="res://Script/generator.gd" id="1_07y2u"]
 [ext_resource type="Texture2D" uid="uid://b55al4h73ibo2" path="res://Free/generator1-sheet.png" id="2_wm3v0"]
+[ext_resource type="AudioStream" uid="uid://k11jrsmfmrf" path="res://Free/607926__robinhood76__10661-bonus-correct-answer.wav" id="3_wm3v0"]
+[ext_resource type="AudioStream" uid="uid://c8b1sb786el7r" path="res://Free/freesound_community-wrong-38598.mp3" id="4_yk02g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07y2u"]
 atlas = ExtResource("2_wm3v0")
@@ -266,6 +268,12 @@ text = "x"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1993102800]
 libraries/ = SubResource("AnimationLibrary_yk02g")
+
+[node name="Correct" type="AudioStreamPlayer" parent="." unique_id=1999312484]
+stream = ExtResource("3_wm3v0")
+
+[node name="False" type="AudioStreamPlayer" parent="." unique_id=1203788727]
+stream = ExtResource("4_yk02g")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

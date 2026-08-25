@@ -6,17 +6,18 @@ extends Node2D
 @onready var world = $".."
 
 var data_jumlah_gene
-var progress200
+var progress300
 
 
 func _ready() -> void:
 	progress_bar.max_value = 600
+	progress_bar.value = 0
 
 
 func _process(_delta: float) -> void:
 	data_jumlah_gene = world.jumlah_gene_aktif
-	if progress_bar.value >= 200:
-		progress200 = true
+	if progress_bar.value >= 300:
+		progress300 = true
 
 
 func _on_timer_timeout() -> void:

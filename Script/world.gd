@@ -6,6 +6,8 @@ extends Node2D
 @onready var gene2 = $Generator2
 @onready var gene3 = $Generator3
 @onready var gene4 = $Generator4
+@onready var victory_sound = $Victory
+@onready var defeat_sound = $Defeat
 
 var jumlah_gene_aktif = 4
 var a
@@ -13,17 +15,28 @@ var b
 var c
 var d
 var progres1
+var sudah = false
 
 
 func _process(delta: float) -> void:
-	time_label.text = str(int(game_timer.wait_time - ((game_timer.wait_time - game_timer.time_left) / game_timer.wait_time) * 100), " ")
+	time_label.text = str(int(game_timer.time_left))
 	if Global.sudah_menang:
 		Global.sudah_menang = false
-		await get_tree().create_timer(5).timeout
+		MusicManager.volume_db = -100.0
+		if !sudah:
+			victory_sound.play()
+			sudah = true
+		await get_tree().create_timer(8).timeout
+		MusicManager.volume_db = -5.0
 		SceneTransition.change_scene("res://Scene/menu.tscn")
 	if Global.sudah_kalah:
 		Global.sudah_kalah = false
-		await get_tree().create_timer(5).timeout
+		MusicManager.volume_db = -100.0
+		if !sudah:
+			defeat_sound.play()
+			sudah = true
+		await get_tree().create_timer(8).timeout
+		MusicManager.volume_db = -5.0
 		SceneTransition.change_scene("res://Scene/menu.tscn")
 	if gene1.gene_on:
 		a = 1
@@ -46,7 +59,6 @@ func _process(delta: float) -> void:
 
 func _on_game_timer_timeout() -> void:
 	Global.sudah_kalah = true
-	Global.sudah_kalah = false
 
 
 func _on_laptop_1_progress_200() -> void:
