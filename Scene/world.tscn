@@ -285,7 +285,7 @@ position = Vector2(272, -304)
 position = Vector2(-96, -152)
 
 [node name="GameTimer" type="Timer" parent="." unique_id=1496669052]
-wait_time = 10.0
+wait_time = 120.0
 autostart = true
 
 [node name="CanvasLayer" parent="." unique_id=818496450 instance=ExtResource("7_pkg7o")]
@@ -297,8 +297,10 @@ texture = ExtResource("8_ddf65")
 
 [node name="Defeat" type="AudioStreamPlayer" parent="." unique_id=478131272]
 stream = ExtResource("9_h7cfj")
+volume_db = -2.0
 
 [node name="Victory" type="AudioStreamPlayer" parent="." unique_id=692715202]
 stream = SubResource("AudioStreamMP3_ddf65")
+volume_db = -2.0
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

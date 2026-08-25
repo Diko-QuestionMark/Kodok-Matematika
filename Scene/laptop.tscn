@@ -13,9 +13,9 @@ texture = ExtResource("2_f2i8v")
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=842694610]
 modulate = Color(0.07294176, 0.99274486, 0, 1)
 offset_left = -48.0
-offset_top = -32.0
+offset_top = -24.0
 offset_right = 48.0
-offset_bottom = -14.0
+offset_bottom = -6.0
 theme_override_font_sizes/font_size = 10
 max_value = 1000.0
 
@@ -25,11 +25,12 @@ autostart = true
 
 [node name="Label" type="Label" parent="." unique_id=1005186646]
 offset_left = -56.0
-offset_top = -48.0
+offset_top = -56.0
 offset_right = 56.0
-offset_bottom = -36.0
+offset_bottom = -29.0
 theme_override_font_sizes/font_size = 8
-text = "Kecepatan: Tinggi"
+text = "4 generator aktif
+kecepatan download: Tinggi"
 horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

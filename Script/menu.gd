@@ -1,15 +1,15 @@
 extends Node2D
 
+@onready var berhasil_gagal = $BerhasilGagal
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass
-
+	#var music_bus = AudioServer.get_bus_index("Music")
+	#AudioServer.set_bus_effect_enabled(music_bus, 0, true)
+	Global.sudah_kalah = false
+	Global.sudah_menang = false
+	berhasil_gagal.text = "Berhasil: " + str(Global.jumlah_berhasil) + "
+	" + "Gagal: " + str(Global.jumlah_gagal)
 
 func _on_mulai_pressed() -> void:
 	SceneTransition.change_scene("res://Scene/world.tscn")

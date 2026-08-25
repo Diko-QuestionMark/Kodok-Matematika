@@ -18,12 +18,18 @@ var progres1
 var sudah = false
 
 
+func _ready() -> void:
+	pass
+	#var music_bus = AudioServer.get_bus_index("Music")
+	#AudioServer.set_bus_effect_enabled(music_bus, 0, false)
+
 func _process(delta: float) -> void:
 	time_label.text = str(int(game_timer.time_left))
 	if Global.sudah_menang:
 		Global.sudah_menang = false
 		MusicManager.volume_db = -100.0
 		if !sudah:
+			Global.jumlah_berhasil += 1
 			victory_sound.play()
 			sudah = true
 		await get_tree().create_timer(8).timeout
@@ -33,6 +39,7 @@ func _process(delta: float) -> void:
 		Global.sudah_kalah = false
 		MusicManager.volume_db = -100.0
 		if !sudah:
+			Global.jumlah_gagal += 1
 			defeat_sound.play()
 			sudah = true
 		await get_tree().create_timer(8).timeout
@@ -59,6 +66,7 @@ func _process(delta: float) -> void:
 
 func _on_game_timer_timeout() -> void:
 	Global.sudah_kalah = true
+	Global.jumlah_gagal += 1
 
 
 func _on_laptop_1_progress_200() -> void:

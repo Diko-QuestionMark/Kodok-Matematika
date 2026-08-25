@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.48235294)
+color = Color(0, 0, 0, 0.6901961)
 
 [node name="GameMenang1" type="Label" parent="GameMenang" unique_id=843987054]
 layout_mode = 1
@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.48235294)
+color = Color(0, 0, 0, 0.6901961)
 
 [node name="GameKalah1" type="Label" parent="GameKalah" unique_id=2096204519]
 layout_mode = 1

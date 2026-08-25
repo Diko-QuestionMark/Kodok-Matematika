@@ -273,4 +273,4 @@ visibility_mode = 1
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=455765639]
 stream = ExtResource("10_c68nv")
-volume_db = -1.0
+volume_db = -3.0

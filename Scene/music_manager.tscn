@@ -8,3 +8,4 @@ loop = true
 stream = SubResource("AudioStreamMP3_jiw71")
 volume_db = -5.0
 autoplay = true
+bus = &"Music"

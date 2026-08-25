@@ -53,6 +53,9 @@ func _process(_delta: float) -> void:
 		
 		Global.panel_aktif = true
 		layar_perbaikan.show()
+		
+	if Global.sudah_menang || Global.sudah_kalah:
+		layar_perbaikan.hide()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
