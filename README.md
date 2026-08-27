@@ -8,3 +8,5 @@ akan kelaparan!
 <br>
 <h1>Alasan Game ini Dibuat</h1>
 Untuk melatih skill game dev saya, dan menciptakan sebuah hasil yang bisa dinikmati banyak orang.
+
+![Uploading image.png…]()
