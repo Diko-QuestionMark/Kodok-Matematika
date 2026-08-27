@@ -532,20 +532,44 @@ text = "Cara Bermain"
 layout_mode = 2
 text = "Keluar"
 
-[node name="LayarCaraBermain" type="ColorRect" parent="Camera2D" unique_id=1722743151]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -316.0
-offset_top = -188.0
-offset_right = 316.0
-offset_bottom = 188.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1560301330]
+visible = false
+
+[node name="LayarCaraBermain" type="ColorRect" parent="CanvasLayer" unique_id=1722743151]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.69411767)
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Label" type="Label" parent="CanvasLayer/LayarCaraBermain" unique_id=1317453210]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 144.0
+offset_right = 1045.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 32
+text = "Di Komputer:
+Bergerak menggunakan tombol W A S D SPACE pada keyboard.
+
+Pada Perangkat Sentuh:
+Gunakan tombol kontrol di layar untuk bergerak.
+
+Tujuan Permainan:
+Jaga generator agar tetap aktif dan selesaikan proses download
+sebelum semuanya mati!"
+
+[node name="Tutup" type="Button" parent="CanvasLayer/LayarCaraBermain" unique_id=1636271287]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 32.0
+offset_right = 1122.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "x"
 
 [connection signal="pressed" from="Camera2D/VBoxContainer/Mulai" to="." method="_on_mulai_pressed"]
 [connection signal="pressed" from="Camera2D/VBoxContainer/Cara Bermain" to="." method="_on_cara_bermain_pressed"]
 [connection signal="pressed" from="Camera2D/VBoxContainer/Keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="CanvasLayer/LayarCaraBermain/Tutup" to="." method="_on_tutup_pressed"]

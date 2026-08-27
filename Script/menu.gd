@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var berhasil_gagal = $Camera2D/BerhasilGagal
+@onready var cara_bermain = $CanvasLayer
 
 func _ready() -> void:
 	SaveLoad._load()
@@ -16,8 +17,12 @@ func _on_mulai_pressed() -> void:
 
 
 func _on_cara_bermain_pressed() -> void:
-	pass # Replace with function body.
+	cara_bermain.show()
 
 
 func _on_keluar_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_tutup_pressed() -> void:
+	cara_bermain.hide()
