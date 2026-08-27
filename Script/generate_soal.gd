@@ -8,8 +8,8 @@ func _ready() -> void:
 
 
 func generate_soal():
-	var angka1 = randi_range(1, 10)
-	var angka2 = randi_range(1, 10)
+	var angka1 = randi_range(1, 15)
+	var angka2 = randi_range(1, 15)
 	
 	jawaban_benar = angka1 + angka2
 	
