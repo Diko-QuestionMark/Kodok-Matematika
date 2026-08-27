@@ -10,3 +10,5 @@ akan kelaparan!
 Untuk melatih skill game dev saya, dan menciptakan sebuah hasil yang bisa dinikmati banyak orang.
 
 <img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/2d856182-31ae-46c5-b356-44f8320e9af8" />
+<img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/204b7c5a-c18b-400a-a56b-3dcf14d8dd33" />
+<img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/dcfc0d26-7bc2-4c8f-80dd-5f1c6dc6c6b3" />
