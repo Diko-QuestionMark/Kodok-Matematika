@@ -30,9 +30,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if laptop.progress300:
+		print("balelo")
 		timer.wait_time = 3
-		print("progress300")
-	
+
+	if Global.sudah_menang || Global.sudah_kalah:
+		tutup_layar_perbaikan()
 	
 	if on_area && health != 10:
 		label.show()
@@ -54,8 +56,6 @@ func _process(_delta: float) -> void:
 		Global.panel_aktif = true
 		layar_perbaikan.show()
 		
-	if Global.sudah_menang || Global.sudah_kalah:
-		layar_perbaikan.hide()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -128,7 +128,7 @@ func cek_jawaban(button: int) -> void:
 		gene_on = true
 		sprite.play("on")
 	else:
-		health -= 3
+		health -= 6
 		if health < 0:
 			gene_on = false
 			sprite.play("off")

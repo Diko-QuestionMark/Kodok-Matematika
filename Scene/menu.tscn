@@ -442,6 +442,25 @@ script = ExtResource("1_k52wo")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1417410354]
 zoom = Vector2(3, 3)
 
+[node name="Dibuat" type="Label" parent="Camera2D" unique_id=83393025]
+offset_left = -160.0
+offset_top = 96.0
+offset_right = -76.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.36328125, 0.36328125, 0.36328125, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 8
+text = "Dibuat oleh Fedriko"
+
+[node name="BerhasilGagal" type="Label" parent="Camera2D" unique_id=1318728933]
+offset_left = -160.0
+offset_top = -56.0
+offset_right = -88.0
+offset_bottom = -29.0
+theme_override_font_sizes/font_size = 8
+text = "Berhasil: 10
+Gagal: 10"
+
 [node name="Player" type="CharacterBody2D" parent="Camera2D" unique_id=1737007550]
 position = Vector2(-82, 9)
 
@@ -495,43 +514,38 @@ theme_override_font_sizes/font_size = 32
 text = "KODOK MATEMATIKA"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=870474747]
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D" unique_id=870474747]
 offset_left = 40.0
 offset_top = -16.0
 offset_right = 154.0
 offset_bottom = 85.0
 
-[node name="Mulai" type="Button" parent="VBoxContainer" unique_id=671531400]
+[node name="Mulai" type="Button" parent="Camera2D/VBoxContainer" unique_id=671531400]
 layout_mode = 2
 text = "Mulai"
 
-[node name="Cara Bermain" type="Button" parent="VBoxContainer" unique_id=1946024240]
+[node name="Cara Bermain" type="Button" parent="Camera2D/VBoxContainer" unique_id=1946024240]
 layout_mode = 2
 text = "Cara Bermain"
 
-[node name="Keluar" type="Button" parent="VBoxContainer" unique_id=1428734522]
+[node name="Keluar" type="Button" parent="Camera2D/VBoxContainer" unique_id=1428734522]
 layout_mode = 2
 text = "Keluar"
 
-[node name="BerhasilGagal" type="Label" parent="." unique_id=1318728933]
-offset_left = -160.0
-offset_top = -56.0
-offset_right = -88.0
-offset_bottom = -29.0
-theme_override_font_sizes/font_size = 8
-text = "Berhasil: 10
-Gagal: 10"
+[node name="LayarCaraBermain" type="ColorRect" parent="Camera2D" unique_id=1722743151]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -188.0
+offset_right = 316.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.69411767)
 
-[node name="Dibuat" type="Label" parent="." unique_id=83393025]
-offset_left = -160.0
-offset_top = 96.0
-offset_right = -76.0
-offset_bottom = 108.0
-theme_override_colors/font_color = Color(0.36328125, 0.36328125, 0.36328125, 1)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 8
-text = "Dibuat oleh Fedriko"
-
-[connection signal="pressed" from="VBoxContainer/Mulai" to="." method="_on_mulai_pressed"]
-[connection signal="pressed" from="VBoxContainer/Cara Bermain" to="." method="_on_cara_bermain_pressed"]
-[connection signal="pressed" from="VBoxContainer/Keluar" to="." method="_on_keluar_pressed"]
+[connection signal="pressed" from="Camera2D/VBoxContainer/Mulai" to="." method="_on_mulai_pressed"]
+[connection signal="pressed" from="Camera2D/VBoxContainer/Cara Bermain" to="." method="_on_cara_bermain_pressed"]
+[connection signal="pressed" from="Camera2D/VBoxContainer/Keluar" to="." method="_on_keluar_pressed"]

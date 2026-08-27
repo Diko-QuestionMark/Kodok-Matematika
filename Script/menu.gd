@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var berhasil_gagal = $BerhasilGagal
+@onready var berhasil_gagal = $Camera2D/BerhasilGagal
 
 func _ready() -> void:
-	pass
+	SaveLoad._load()
 	#var music_bus = AudioServer.get_bus_index("Music")
 	#AudioServer.set_bus_effect_enabled(music_bus, 0, true)
 	Global.sudah_kalah = false

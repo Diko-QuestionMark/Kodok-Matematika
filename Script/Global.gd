@@ -8,5 +8,9 @@ var jumlah_berhasil = 0
 var jumlah_gagal = 0
 
 
+func _ready() -> void:
+	pass
+
+
 func _process(delta: float) -> void:
 	pass

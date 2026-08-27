@@ -1,9 +1,113 @@
 [gd_scene format=3 uid="uid://burrt3a4mt6hu"]
 
 [ext_resource type="Script" uid="uid://cmixfa2yjr0hn" path="res://Script/canvas_layer.gd" id="1_ml06h"]
+[ext_resource type="Texture2D" uid="uid://cfofpabmsx722" path="res://Free/pausebutton.png" id="2_vcvjm"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=818496450]
 script = ExtResource("1_ml06h")
+
+[node name="Sembunyikan" type="Button" parent="." unique_id=1509257773]
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 129.0
+offset_bottom = 223.0
+text = "sembunyikan tugas"
+
+[node name="Time" type="Label" parent="." unique_id=740049999]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "120 "
+horizontal_alignment = 2
+
+[node name="Task" type="ColorRect" parent="." unique_id=302657653]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 96.0
+offset_right = -728.0
+offset_bottom = -464.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="Label" type="Label" parent="Task" unique_id=965317975]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 424.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 24
+text = "- Jaga generator tetap aktif
+- Tunggu hingga donwload selesai"
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=1566728013]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 80.0
+offset_bottom = 80.0
+texture_normal = ExtResource("2_vcvjm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LayarPause" type="ColorRect" parent="." unique_id=1820201689]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6901961)
+
+[node name="Pause" type="Label" parent="LayarPause" unique_id=1434788786]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -260.0
+offset_right = 144.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+text = "JEDA"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LayarPause" unique_id=1928776655]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 52.0
+offset_right = 141.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lanjut" type="Button" parent="LayarPause/VBoxContainer" unique_id=2142777367]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Lanjut"
+
+[node name="KeMenu" type="Button" parent="LayarPause/VBoxContainer" unique_id=875489093]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Ke menu"
 
 [node name="GameMenang" type="ColorRect" parent="." unique_id=276667799]
 visible = false
@@ -93,15 +197,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAGAL"
 horizontal_alignment = 1
 
-[node name="Time" type="Label" parent="." unique_id=740049999]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = 24.0
-offset_right = -40.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "120 "
-horizontal_alignment = 2
+[connection signal="pressed" from="Sembunyikan" to="." method="_on_sembunyikan_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="LayarPause/VBoxContainer/Lanjut" to="." method="_on_lanjut_pressed"]
+[connection signal="pressed" from="LayarPause/VBoxContainer/KeMenu" to="." method="_on_ke_menu_pressed"]
